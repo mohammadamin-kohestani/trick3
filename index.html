@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .para5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+
+            >.para {
+                width: 230px;
+                height: 230px;
+                background-color: #fac731;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 0px 0px  10px 1px rgba(0, 0, 0, 0.418);
+                position: relative;
+
+                >.para1 {
+                    width: 200px;
+                    height: 205px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    /* border: 1px solid red; */
+                    background-image: linear-gradient(#ffe8a6, #feca32, #fac731);
+                    position: absolute;
+
+                    >.para2 {
+                        width: 25px;
+                        height: 40px;
+                        border-radius: 50%;
+                        /* border: 1px solid red; */
+                        animation: _para 11s linear infinite;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        flex-wrap: wrap;
+                        background-color:#945a0e;
+                        box-shadow: inset 0px 0px  10px 1px rgba(0, 0, 0, 0.562);
+                        
+                    }
+
+
+                    >.para3 {
+                            width: 80%;
+                            height: 100px;
+                            /* border: 1px solid purple; */
+                            display: flex;
+                            justify-content: center;
+                            align-items: end;
+
+                            >span {
+                                display: flex;
+                                width: 100px;
+                                height: 90px;
+                                /* border: 1px solid black; */
+                                background-color:#945a0e;
+                                box-shadow: inset 0px 0px  10px 1px rgba(0, 0, 0, 0.562);
+                                clip-path: circle(50px at 50% 0 );
+                                /* border-radius: 50%; */
+                                transform: translateY(20px);
+                                 
+                                
+                            }
+                        }
+
+
+
+                }
+            }
+        }
+
+        @keyframes _para {
+            0% {
+                width: 25px;
+                height: 40px;
+            }
+
+            45% {
+                width: 25px;
+                height: 40px;
+            }
+
+            48% {
+                height: 10px;
+                width: 25px;
+            }
+
+            50% {
+                height: 40px;
+                width: 25px;
+            }
+
+            100% {
+                height: 40px;
+                width: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="para5">
+        <div class="para">
+            <div class="para1">
+                <div class="para2"></div>
+                <div class="para2"></div>
+                <div class="para3">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+
+<script>
+    let h = document.getElementsByClassName('para5')[0].clientHeight
+    console.log(h);
+    let w =document.getElementsByClassName('para5')[0].clientWidth
+    console.log(w);
+    document.getElementsByClassName('para5')[0].addEventListener('mousemove', (e)=>{
+        let x = e.clientX
+        let y =e.clientY
+
+        x = x -(w/2)
+        y = y -(h/4) 
+        console.log(y)
+
+        document.getElementsByClassName('para2')[0].style.transform='translateX('+(x/80)+'px) translateY('+(y/30)+'px)'
+        document.getElementsByClassName('para2')[1].style.transform='translateX('+(x/80)+'px) translateY('+ (y/30) +'px)'
+        document.getElementsByClassName('para')[0].style.transform='translateX('+(x/80)+'px) translateY('+(y/30)+'px)'
+        document.getElementsByClassName('para1')[0].style.transform='translateX('+(x/80)+'px) translateY('+(y/60)+'px)'
+       
+
+    })
+
+
+    
+    
+    
+</script>
+
+</html>
